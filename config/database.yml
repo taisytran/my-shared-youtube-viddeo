@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: my_shared_ytvid_production
-  username: my_shared_ytvid
-  password: <%= ENV['MY_SHARED_YTVID_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
