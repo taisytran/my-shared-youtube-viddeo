@@ -1,5 +1,10 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'hello#index'
-  get 'hello', to: 'hello#index'
+  root 'home#index'
+  get 'home', to: 'home#index'
+
+  # authenticate
+  post '/login_or_signup', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 end

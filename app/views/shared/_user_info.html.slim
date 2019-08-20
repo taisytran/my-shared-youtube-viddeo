@@ -1,0 +1,8 @@
+form.form-inline.ml-auto
+  .form-group.mb-2
+    span
+      = current_user&.email
+  .form-group.mx-sm-3.mb-2
+    a.btn.btn-primary href="#"  Share a movie
+  .form-group.mb-2
+    = link_to 'Logout', logout_path, method: :delete, class: 'btn btn-danger'

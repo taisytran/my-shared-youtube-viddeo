@@ -1,0 +1,13 @@
+nav.navbar.navbar-light.navbar-expand-md.shadow-sm.navigation-clean-search
+  .container
+    a.navbar-brand href="#" 
+      i.fa.fa-home
+      span Funny Movies
+    button.navbar-toggler data-target="#navcol-1" data-toggle="collapse" 
+      span.sr-only Toggle navigation
+      span.navbar-toggler-icon
+    #navcol-1.collapse.navbar-collapse.text-right
+     - if logged_in?
+      = render 'shared/user_info'
+     - else
+      = render 'shared/login_or_signup_form'

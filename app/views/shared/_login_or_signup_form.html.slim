@@ -1,0 +1,6 @@
+= form_for :resource, url: login_or_signup_path, html: { class: 'form-inline ml-auto' } do |f|
+    .form-group.mb-2
+        = f.email_field :email, placeholder: 'Enter email', class: 'form-control'
+    .form-group.mx-sm-3.mb-2
+        = f.password_field :password, placeholder: 'Enter password', class: 'form-control'
+    = f.submit class: 'btn btn-danger mb-2', value: 'Login / Register'
