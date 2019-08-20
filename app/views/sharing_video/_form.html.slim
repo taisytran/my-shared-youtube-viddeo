@@ -1,0 +1,9 @@
+= form_for @video, url: sharing_video_index_path, method: :post do |f|
+    .form-group.row
+        label.col-md-2.col-form-label for="ytUrl"  Youtube Url:
+        .col-md-10
+            = f.text_field :url, id: 'ytUrl', class: 'form-control'
+            = f.hidden_field :user_id, value: @current_user&.id
+    .form-group.row
+        .col-md-10.offset-md-2
+            = f.submit class: 'btn btn-danger btn-md btn-block', value: 'Share'

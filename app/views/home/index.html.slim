@@ -1,21 +1,26 @@
-.row
-  .col.mx-auto
-    .media
-      img.mr-3 src="https://dummyimage.com/600x400/000/fff" /
-      .media-body
-        h5.text-danger Media Heading
-        p.mb-0.pd-0.font-weight-light Shared by: tai.tran@email.com
-        p.font-weight-light
-          span.pr-2
-            | 69
-            i.far.fa-thumbs-up.pl-1
-          span
-            | 96
-            i.far.fa-thumbs-down.pl-1
-        p.mb-0.pb-0 Description:
-        p.font-weight-bold 
-          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisl ac diam feugiat, non vestibulum libero posuere. Vivamus pharetra leo non nulla egestas, nec malesuada orci finibus.
-  .col.col-md-1
-    i.far.fa-thumbs-up.fa-3x
-  .col.col-md-1
-    i.far.fa-thumbs-down.fa-3x
+- @shared_videos.each do |video|
+  .row.justify-content-center.mb-4
+    .col.col-md-10
+      .media
+        .embed-responsive.embed-responsive-16by9.mr-3.w-50
+          iframe.embed-responsive-item allowfullscreen="" src="https://www.youtube.com/embed/#{video.uid}" 
+        .media-body
+          h5.text-danger
+            = video.title
+          p.mb-0.pd-0.font-weight-light 
+            | Shared by:&nbsp
+            = video.sharer
+          p.font-weight-light
+            span.pr-2
+              = video.likes
+              i.far.fa-thumbs-up.pl-1
+            span
+              = video.dislikes
+              i.far.fa-thumbs-down.pl-1
+          p.mb-0.pb-0 Description:
+          p.font-weight-bold
+            = video.description&.truncate_words(75)
+    .col.col-md-1
+      i.far.fa-thumbs-up.fa-3x
+    .col.col-md-1
+      i.far.fa-thumbs-down.fa-3x

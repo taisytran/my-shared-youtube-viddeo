@@ -52,7 +52,7 @@ gem 'slim'
 gem 'slim-rails'
 
 # youtube
-gem 'yt'
+gem 'yt', '~> 0.32.0'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
