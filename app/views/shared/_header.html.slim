@@ -1,8 +1,8 @@
 nav.navbar.navbar-light.navbar-expand-md.shadow-sm.navigation-clean-search
   .container
-    a.navbar-brand href="#" 
-      i.fa.fa-home
-      span Funny Movies
+    = link_to root_path, class: 'navbar-brand' do
+      i.fa.fa-home.text-danger
+      span.text-danger Funny Movies
     button.navbar-toggler data-target="#navcol-1" data-toggle="collapse" 
       span.sr-only Toggle navigation
       span.navbar-toggler-icon

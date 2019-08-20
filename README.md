@@ -29,6 +29,8 @@ bundle exec db:seed
 
 * Run Server
 
+- Access: https://pure-shore-55596.herokuapp.com/ or run locally using the below command
+
 ```
 bundle exec rails server
 ```
