@@ -1,0 +1,8 @@
+- action_path = voted ? unvote_path : downvote_path
+
+= button_to action_path, method: :post, class: 'btn border-0', 
+            params: { vote: { user_id: @current_user&.id, video_id: video&.id } } do
+    - if voted
+        i.fas.fa-thumbs-down.fa-3x
+    - else
+        i.far.fa-thumbs-down.fa-3x

@@ -20,7 +20,12 @@
           p.mb-0.pb-0 Description:
           p.font-weight-bold
             = video.description&.truncate_words(75)
-    .col.col-md-1
-      i.far.fa-thumbs-up.fa-3x
-    .col.col-md-1
-      i.far.fa-thumbs-down.fa-3x
+
+    - if @current_user&.voted?(video&.id)
+      .col.col-md-2
+        = render partial: "home/#{@current_user.voted_type(video&.id)}", locals: { video: video, voted: true }
+    - else
+      .col.col-md-1
+        = render partial: 'home/up_voted', locals: { video: video, voted: false }
+      .col.col-md-1
+        = render partial: 'home/down_voted', locals: { video: video, voted: false }

@@ -5,6 +5,7 @@ class Video < ApplicationRecord
 
   # Associations
   belongs_to :user
+  has_many :votes
 
   # Validations
   validates :url, presence: true, format: YT_URL_FORMAT

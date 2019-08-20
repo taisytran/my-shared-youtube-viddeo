@@ -10,4 +10,11 @@ Rails.application.routes.draw do
 
   # share a video
   resources :sharing_video, only: %i[index create]
+
+  # vote a video
+  scope :vote, controller: :vote do
+    post :up, as: 'upvote'
+    post :down, as: 'downvote'
+    post :unvote, as: 'unvote'
+  end
 end
