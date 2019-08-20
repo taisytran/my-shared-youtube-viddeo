@@ -6,19 +6,29 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+- 2.6.3
 
 * System dependencies
+- postgres
+- bundler
 
-* Configuration
+* Configuration (optional)
+- Get a new google api and add Environment GOOGLE_API_KEY
 
 * Database creation
 
+```
+bundle exec rails db:create
+```
+
 * Database initialization
+```
+bundle exec rails db:migrate
+bundle exec db:seed
+```
 
-* How to run the test suite
+* Run Server
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle exec rails server
+```
