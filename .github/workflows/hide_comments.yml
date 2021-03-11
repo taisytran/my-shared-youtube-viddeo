@@ -16,3 +16,5 @@ jobs:
           by-author: taisytran
           body-includes: |
             My Comment
+            Test abc
+            ### [xxx] Terraform plan :book:
