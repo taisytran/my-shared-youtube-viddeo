@@ -1,0 +1,18 @@
+name: "Hide outdated plan"
+
+on: pull_request
+
+jobs:
+  minimize_outdated_plans:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Minimize Outdated Plans
+        uses: iStreamPlanet/github-actions/minimize-comments@main
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          by-author: taisytran
+          body-includes: |
+            My Comment
